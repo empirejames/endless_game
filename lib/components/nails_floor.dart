@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:endless_game/utilities/asset_paths.dart';
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:flame/extensions.dart';
@@ -61,7 +62,7 @@ class NailsFloor extends SpriteComponent with HasWorldReference<EndlessWorld> {
     // Since all the obstacles reside in the same image, srcSize and srcPosition
     // are used to determine what part of the image that should be used.
     sprite = await Sprite.load(
-      'nails.png',
+      AssetPaths.ground_grass,
       srcSize: _srcSize,
       srcPosition: _srcPosition,
     );

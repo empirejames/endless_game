@@ -14,9 +14,9 @@ class EndlessRunner extends FlameGame<EndlessWorld> with HasCollisionDetection {
     required PlayerProgress playerProgress,
     required this.audioController,
   }) : super(
-          world: EndlessWorld(level: level, playerProgress: playerProgress),
-          camera: CameraComponent.withFixedResolution(width: 1600, height: 720),
-        );
+    world: EndlessWorld(level: level, playerProgress: playerProgress),
+    camera: CameraComponent.withFixedResolution(width: 1600, height: 720),
+  );
 
   /// What the properties of the level that is played has.
   final GameLevel level;

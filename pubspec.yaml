@@ -14,6 +14,7 @@ dependencies:
   logging: ^1.2.0
   audioplayers: ^5.2.1
   flame: ^1.14.0
+  flame_svg: ^1.8.9
   provider: ^6.1.1
   nes_ui: ^0.13.0
   google_fonts: ^6.1.0
@@ -32,4 +33,15 @@ flutter:
   assets:
     - assets/images/
     - assets/images/dash/
+    - assets/images/kenney_jumper_pack/
+    - assets/images/kenney_jumper_pack/PNG/
+    - assets/images/kenney_jumper_pack/PNG/Background/
+    - assets/images/kenney_jumper_pack/PNG/Enemies/
+    - assets/images/kenney_jumper_pack/PNG/Environment/
+    - assets/images/kenney_jumper_pack/PNG/HUD/
+    - assets/images/kenney_jumper_pack/PNG/Items/
+    - assets/images/kenney_jumper_pack/PNG/Particles/
+    - assets/images/kenney_jumper_pack/PNG/Players/
+    - assets/images/kenney_jumper_pack/Spritesheets/
+    - assets/images/kenney_jumper_pack/Vector/
     - assets/sfx/

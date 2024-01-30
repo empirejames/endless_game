@@ -26,37 +26,38 @@ class GameScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final audioController = context.read<AudioController>();
     return Scaffold(
-        body: Directionality(
-      textDirection: TextDirection.ltr,
-      child: GameWidget<EndlessRunner>(
-        key: const Key('play session'),
-        game: EndlessRunner(
-          level: level,
-          playerProgress: context.read<PlayerProgress>(),
-          audioController: audioController,
+      body: Directionality(
+        textDirection: TextDirection.ltr,
+        child: GameWidget<EndlessRunner>(
+          key: const Key('play session'),
+          game: EndlessRunner(
+            level: level,
+            playerProgress: context.read<PlayerProgress>(),
+            audioController: audioController,
+          ),
+          overlayBuilderMap: {
+            backButtonKey: (BuildContext context, EndlessRunner game) {
+              return Positioned(
+                top: 20,
+                right: 10,
+                child: NesButton(
+                  type: NesButtonType.normal,
+                  onPressed: () {
+                    print("GGGGGGGGGGG");
+                  },
+                  child: NesIcon(iconData: NesIcons.leftArrowIndicator),
+                ),
+              );
+            },
+            winDialogKey: (BuildContext context, EndlessRunner game) {
+              return GameWinDialog(
+                level: level,
+                levelCompletedIn: game.world.levelCompletedIn,
+              );
+            },
+          },
         ),
-        overlayBuilderMap: {
-          backButtonKey: (BuildContext context, EndlessRunner game) {
-            return Positioned(
-              top: 20,
-              right: 10,
-              child: NesButton(
-                type: NesButtonType.normal,
-                onPressed: () {
-                  print("GGGGGGGGGGG");
-                },
-                child: NesIcon(iconData: NesIcons.leftArrowIndicator),
-              ),
-            );
-          },
-          winDialogKey: (BuildContext context, EndlessRunner game) {
-            return GameWinDialog(
-              level: level,
-              levelCompletedIn: game.world.levelCompletedIn,
-            );
-          },
-        },
       ),
-    ));
+    );
   }
 }

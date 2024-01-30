@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'dart:ui';
 
+import 'package:endless_game/utilities/asset_paths.dart';
 import 'package:flame/components.dart';
 import 'package:flame/parallax.dart';
 
@@ -15,10 +16,10 @@ class Background extends ParallaxComponent {
   @override
   Future<void> onLoad() async {
     final layers = [
-      ParallaxImageData('background.png'),
-      ParallaxImageData('ceiling.png'),
-      ParallaxImageData('normal.png'),
-      ParallaxImageData('nails.png'),
+      ParallaxImageData(AssetPaths.bg_layer1),
+      ParallaxImageData(AssetPaths.bg_layer2),
+      ParallaxImageData(AssetPaths.bg_layer3),
+      ParallaxImageData(AssetPaths.bg_layer4),
     ];
 
     // The base velocity sets the speed of the layer the farthest to the back.
